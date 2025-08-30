@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Paras Vishnoi — Expert Software Developer</title>
+  <meta name="description" content="Paras Vishnoi — Expert Software Developer & Final Year B.Tech Student. Portfolio: Web dev, Python, AWS, SEO, WordPress." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons (optional) -->
+  <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+  <style>
+    :root{
+      --bg:#071224;
+      --panel:#0d1720;
+      --muted:#9aa7b3;
+      --accent:#25c16f; /* green accent */
+      --card:#0f1a21;
+      --glass: rgba(255,255,255,0.03);
+      --radius:12px;
+      --maxW:1100px;
+      --gap:24px;
+      --glass-strong: rgba(255,255,255,0.04);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,Arial;
+      background:linear-gradient(180deg,var(--bg),#04121a 120%);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+    a{color:var(--accent);text-decoration:none}
+    header{
+      position:sticky;top:0;z-index:40;
+      backdrop-filter: blur(6px);
+      background:linear-gradient(180deg, rgba(5,9,12,0.6), rgba(5,9,12,0.4));
+      border-bottom:1px solid rgba(255,255,255,0.03);
+    }
+    .container{max-width:var(--maxW);margin:0 auto;padding:28px 20px;}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:20px;}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{
+      width:42px;height:42px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#12a86b);
+      display:flex;align-items:center;justify-content:center;font-weight:700;color:#021010;
+      box-shadow:0 4px 18px rgba(0,0,0,0.6);
+    }
+    nav ul{display:flex;gap:18px;align-items:center;list-style:none;margin:0;padding:0}
+    nav a{color:#cfeaf0;font-weight:500;font-size:14px;opacity:0.95}
+    .btn-green{
+      background:linear-gradient(180deg,var(--accent),#12a86b);
+      color:#021010;padding:10px 14px;border-radius:10px;font-weight:700;border:none;cursor:pointer;
+      box-shadow:0 8px 24px rgba(37,193,111,0.12);
+    }
+
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:30px;align-items:center;padding:56px 0}
+    .hero-left h1{font-size:34px;margin:0 0 10px;color:#e8fbf1}
+    .hero-left p.lead{color:var(--muted);margin:0 0 22px;max-width:680px}
+    .hero-ctas{display:flex;gap:14px}
+    .photo-card{
+      width:100%;max-width:360px;height:360px;border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#071f1a,#06202a);
+      display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.04);
+    }
+    .photo-card img{width:100%;height:100%;object-fit:cover;display:block}
+
+    /* sections */
+    section.card{
+      background:var(--panel);border-radius:14px;padding:28px;margin-bottom:24px;border:1px solid rgba(255,255,255,0.03);
+      box-shadow: 0 6px 30px rgba(3,8,12,0.6);
+    }
+    .about-grid{display:grid;grid-template-columns:220px 1fr;gap:22px;align-items:center}
+    .about-grid img{width:220px;height:220px;border-radius:12px;object-fit:cover;border:4px solid rgba(0,0,0,0.2)}
+    .about-grid p{color:var(--muted);margin-top:8px}
+
+    /* Skills */
+    .skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:12px}
+    .skill{
+      background:var(--card);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)
+    }
+    .skill .label{display:flex;justify-content:space-between;font-weight:600;margin-bottom:8px}
+    .bar{height:10px;background:rgba(255,255,255,0.04);border-radius:8px;overflow:hidden}
+    .bar > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#9bedb9);width:0%;transition:width 1.2s ease-in-out}
+
+    /* Services */
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .service{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);
+      display:flex;gap:12px;align-items:flex-start;
+    }
+    .icon-round{width:46px;height:46px;border-radius:10px;background:rgba(255,255,255,0.03);display:grid;place-items:center;color:var(--accent);font-weight:700}
+
+    /* Stats */
+    .stats{display:flex;flex-wrap:wrap;gap:18px;margin-top:12px}
+    .stat{flex:1 1 200px;background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);display:flex;gap:12px;align-items:center}
+    .stat .num{font-size:20px;font-weight:700;color:#fff}
+    .stat .label{color:var(--muted);font-size:13px}
+
+    /* Experience */
+    .exp-card{display:flex;flex-direction:column;gap:10px;padding:16px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .exp-card h4{margin:0;color:#fff}
+    .exp-card p{color:var(--muted);margin:0}
+
+    footer{padding:20px 0;text-align:center;color:var(--muted);margin-top:28px;border-top:1px solid rgba(255,255,255,0.02)}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr 1fr}
+      .about-grid{grid-template-columns:140px 1fr}
+      .services{grid-template-columns:repeat(2,1fr)}
+      .skills-grid{grid-template-columns:1fr}
+    }
+    @media (max-width:680px){
+      .nav{flex-direction:column;align-items:flex-start;gap:12px}
+      .hero{grid-template-columns:1fr;gap:20px;padding:28px 0}
+      .photo-card{max-width:100%;height:260px}
+      nav ul{display:none}
+      .container{padding:18px}
+      .services{grid-template-columns:1fr}
+      .stats{flex-direction:column}
+    }
+
+    /* small utils */
+    .muted{color:var(--muted)}
+    .kpi{font-size:18px;font-weight:700}
+    .center{display:grid;place-items:center}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="brand">
+      <div class="logo">PV</div>
+      <div>
+        <div style="font-weight:700">Paras Vishnoi</div>
+        <div style="font-size:12px;color:var(--muted)">Final Year B.Tech — Software Dev</div>
+      </div>
+    </div>
+
+    <nav>
+      <ul>
+        <li style="display:inline"><a href="#about">About</a></li>
+        <li style="display:inline"><a href="#skills">Skills</a></li>
+        <li style="display:inline"><a href="#services">Working On</a></li>
+        <li style="display:inline"><a href="#stats">Stats</a></li>
+        <li style="display:inline"><a href="#experience">Experience</a></li>
+      </ul>
+    </nav>
+
+    <div>
+      <a class="btn-green" href="#" id="downloadResume">Download Resume</a>
+    </div>
+  </div>
+</header>
+
+<main class="container" style="padding-top:26px">
+
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="hero-left">
+      <h1 id="hero-heading">Paras Vishnoi</h1>
+      <div style="font-weight:600;color:#cfeee0;margin-bottom:12px">Expert Software Developer & Final Year B.Tech Student</div>
+      <p class="lead">I build efficient and scalable web applications using modern technologies. Passionate about cloud computing (AWS), algorithms, and creating user-first web experiences. Currently focused on full-stack projects and performance optimizations.</p>
+
+      <div class="hero-ctas">
+        <a class="btn-green" href="#" id="resumeBtn">Download Resume</a>
+        <a href="#projects" style="background:transparent;border:1px solid rgba(255,255,255,0.04);padding:10px 14px;border-radius:10px;color:var(--muted)">View Projects</a>
+      </div>
+    </div>
+
+    <div class="photo-card" aria-hidden="true">
+      <img src="https://via.placeholder.com/500x500.png?text=Your+Photo" alt="Professional photo placeholder">
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="card" aria-labelledby="about-heading">
+    <h2 id="about-heading">About Me</h2>
+    <div class="about-grid" style="margin-top:14px">
+      <img src="https://via.placeholder.com/500x500.png?text=Your+Photo" alt="Paras photo">
+      <div>
+        <p><strong>Why Hire Me for Your Next Project?</strong></p>
+        <p>I’m a final year B.Tech student specializing in software development. I have strong skills in Python, web development, and cloud technologies. I enjoy building useful web apps, collaborating with teams, and solving problems using clean, maintainable code.</p>
+        <p class="muted">Skills: Python • Web Development • AWS Cloud • Data Structures • SEO • WordPress</p>
+        <div style="margin-top:12px">
+          <a class="btn-green" href="#skills">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="card" aria-labelledby="skills-heading">
+    <h2 id="skills-heading">Skills</h2>
+
+    <div class="skills-grid">
+      <!-- Skill: each card -->
+      <div class="skill">
+        <div class="label"><span>Python</span><span>89%</span></div>
+        <div class="bar"><i data-width="89%"></i></div>
+      </div>
+
+      <div class="skill">
+        <div class="label"><span>Data Structures</span><span>88%</span></div>
+        <div class="bar"><i data-width="88%"></i></div>
+      </div>
+
+      <div class="skill">
+        <div class="label"><span>Web Development</span><span>89%</span></div>
+        <div class="bar"><i data-width="89%"></i></div>
+      </div>
+
+      <div class="skill">
+        <div class="label"><span>JavaScript</span><span>57%</span></div>
+        <div class="bar"><i data-width="57%"></i></div>
+      </div>
+
+      <div class="skill">
+        <div class="label"><span>UI/UX Design</span><span>78%</span></div>
+        <div class="bar"><i data-width="78%"></i></div>
+      </div>
+
+      <div class="skill">
+        <div class="label"><span>WordPress Development</span><span>88%</span></div>
+        <div class="bar"><i data-width="88%"></i></div>
+      </div>
+
+      <div class="skill">
+        <div class="label"><span>On-Page SEO</span><span>78%</span></div>
+        <div class="bar"><i data-width="78%"></i></div>
+      </div>
+
+      <div class="skill">
+        <div class="label"><span>Off-Page SEO</span><span>78%</span></div>
+        <div class="bar"><i data-width="78%"></i></div>
+      </div>
+
+      <div class="skill">
+        <div class="label"><span>Technical SEO</span><span>78%</span></div>
+        <div class="bar"><i data-width="78%"></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKING ON / SERVICES -->
+  <section id="services" class="card" aria-labelledby="services-heading">
+    <h2 id="services-heading">Working On — Services & Solutions</h2>
+    <div class="services" style="margin-top:14px">
+      <div class="service">
+        <div class="icon-round">FE</div>
+        <div>
+          <strong>Frontend Development</strong>
+          <div class="muted">Responsive UIs using HTML, CSS, JavaScript & React.</div>
+        </div>
+      </div>
+
+      <div class="service">
+        <div class="icon-round">BE</div>
+        <div>
+          <strong>Backend Development</strong>
+          <div class="muted">API design, Node.js/Python, databases & integrations.</div>
+        </div>
+      </div>
+
+      <div class="service">
+        <div class="icon-round">UI</div>
+        <div>
+          <strong>UI/UX Design</strong>
+          <div class="muted">Wireframes, prototypes and user-first design solutions.</div>
+        </div>
+      </div>
+
+      <div class="service">
+        <div class="icon-round">API</div>
+        <div>
+          <strong>API Integration</strong>
+          <div class="muted">Third-party APIs, REST & data synchronization.</div>
+        </div>
+      </div>
+
+      <div class="service">
+        <div class="icon-round">SEO</div>
+        <div>
+          <strong>SEO Optimization</strong>
+          <div class="muted">On-page, technical & off-page SEO strategies.</div>
+        </div>
+      </div>
+
+      <div class="service">
+        <div class="icon-round">WP</div>
+        <div>
+          <strong>WordPress Website Design</strong>
+          <div class="muted">Custom themes, plugins and site builds.</div>
+        </div>
+      </div>
+
+      <div class="service">
+        <div class="icon-round">SP</div>
+        <div>
+          <strong>Website Speed Optimization</strong>
+          <div class="muted">Performance audits & improvements for faster load times.</div>
+        </div>
+      </div>
+
+      <div class="service">
+        <div class="icon-round">CS</div>
+        <div>
+          <strong>Content Strategy</strong>
+          <div class="muted">SEO-friendly content planning & keyword research.</div>
+        </div>
+      </div>
+
+      <div class="service">
+        <div class="icon-round">WM</div>
+        <div>
+          <strong>Website Maintenance</strong>
+          <div class="muted">Updates, backups and monitoring for production sites.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATISTICS -->
+  <section id="stats" class="card" aria-labelledby="stats-heading">
+    <h2 id="stats-heading">Statistics & Achievements</h2>
+    <div class="stats">
+      <div class="stat">
+        <div style="font-size:28px;color:var(--accent);font-weight:800" class="num" data-target="13">13+</div>
+        <div>
+          <div class="label">Projects Completed</div>
+        </div>
+      </div>
+
+      <div class="stat">
+        <div style="font-size:28px;color:var(--accent);font-weight:800" class="num" data-target="350">350+</div>
+        <div><div class="label">HackerRank Problems Solved</div></div>
+      </div>
+
+      <div class="stat">
+        <div style="font-size:28px;color:var(--accent);font-weight:800" class="num" data-target="250">250+</div>
+        <div><div class="label">GeeksforGeeks Problems Solved</div></div>
+      </div>
+
+      <div class="stat">
+        <div style="font-size:20px;color:var(--accent);font-weight:700" class="num" data-target="2">2</div>
+        <div><div class="label">AWS Cloud Practitioner Certificates</div></div>
+      </div>
+
+      <div class="stat">
+        <div style="font-size:16px;color:#fff;font-weight:700" class="num" data-target="1">IITK</div>
+        <div><div class="label">IIT Kanpur PYTHON Training Program</div></div>
+      </div>
+
+      <div class="stat">
+        <div style="font-size:16px;color:#fff;font-weight:700" class="num" data-target="1">Apna</div>
+        <div><div class="label">Apna College Full Stack Certificate</div></div>
+      </div>
+
+      <div class="stat">
+        <div style="font-size:16px;color:#fff;font-weight:700" class="num" data-target="1">Infosys</div>
+        <div><div class="label">Infosys Python for Data Science</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="card" aria-labelledby="exp-heading">
+    <h2 id="exp-heading">Experience</h2>
+    <div class="exp-card" style="margin-top:12px">
+      <h4>3-Month Internship — UPROI Digital PVT LTD</h4>
+      <p class="muted">Completed a 3-month internship gaining hands-on experience in WordPress development at UPROI Digital PVT LTD. Responsibilities included theme customization, plugin integrations, and site maintenance.</p>
+      <div style="margin-top:10px"><strong>Duration:</strong> 3 months</div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Paras Vishnoi • <a href="#">Contact</a> • <a href="#">GitHub</a> • <a href="#">LinkedIn</a>
+  </footer>
+</main>
+
+<script>
+  // animate skill bars on scroll
+  function animateBars(){
+    document.querySelectorAll('.bar i').forEach(el=>{
+      const w = el.getAttribute('data-width') || '0%';
+      el.style.width = w;
+    });
+  }
+
+  // animate counters
+  function animateCounters(){
+    document.querySelectorAll('.num[data-target]').forEach(el=>{
+      let end = parseInt(el.getAttribute('data-target')) || 0;
+      let start = 0;
+      // if label like "IITK", don't animate numeric
+      if(isNaN(end)) return;
+      let step = Math.max(1, Math.floor(end / 100));
+      const inc = setInterval(()=>{
+        start += step;
+        if(start >= end){
+          el.textContent = (end >= 100 ? end + (end % 1 === 0 ? '+' : '') : end + (end % 1 === 0 ? '' : ''));
+          clearInterval(inc);
+        } else {
+          el.textContent = start + (end >= 100 ? '+' : '');
+        }
+      },12);
+    });
+  }
+
+  // intersection observer for animations
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        if(entry.target.id === 'skills') animateBars();
+        if(entry.target.id === 'stats') animateCounters();
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {threshold:0.2});
+
+  document.querySelectorAll('section.card, .hero').forEach(el=>obs.observe(el));
+
+  // download resume demo (replace with real url)
+  document.getElementById('downloadResume').addEventListener('click', function(e){
+    e.preventDefault();
+    // replace '#' with your resume file url or trigger file download
+    window.open('https://drive.google.com/file/d/1PkzXjMnIC6Ama2XXde8XAqWN3lzXBMeT/view','_blank');
+
+  });
+  document.getElementById('resumeBtn').addEventListener('click', function(e){
+    e.preventDefault();
+    window.open('https://drive.google.com/file/d/1PkzXjMnIC6Ama2XXde8XAqWN3lzXBMeT/view','_blank');
+
+  });
+
+  // small accessibility: enable keyboard focus styles
+  document.addEventListener('keydown', (e)=>{
+    if(e.key === 'Tab') document.body.classList.add('show-focus');
+  });
+</script>
+</body>
+</html>
